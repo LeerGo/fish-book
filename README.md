@@ -7,6 +7,7 @@ Git 上现在已经有一个插件 [thief-book-idea](https://github.com/yisier/t
 ##### Todo List
 
 - [ ] 多书籍阅读记录
+- [ ] PDF 阅读（待定）
 
 ##### 更新记录
 
@@ -17,5 +18,3 @@ Git 上现在已经有一个插件 [thief-book-idea](https://github.com/yisier/t
   - 提供 txt 导入阅读功能
 
 - 待续
-
-
