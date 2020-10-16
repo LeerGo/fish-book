@@ -1,0 +1,34 @@
+<idea-plugin>
+    <id>fun.bugfix.fish.book-read</id>
+    <name>摸鱼之书</name>
+    <vendor email="a94118@gmail.com" url="https://blog.bugfix.fun/">Bugfix.Fun</vendor>
+
+    <description>
+        <![CDATA[
+            每天一个摸鱼小技巧<br>
+            设置界面在 File | Settings | Other Settings | Fish-Book Config<br>
+            设置完毕后，在底部 FishBook 面板点击[刷新]<br>
+            刷新时间视文件大小而定，刷新完毕后即可阅读啦~<br>
+        ]]>
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!--canCloseContents 允许用户关闭-->
+        <toolWindow id="FishBook" anchor="bottom" canCloseContents="false" icon="/icons/logo.png"
+                    factoryClass="fun.bugfix.fish.idea.MainUi"/>
+
+        <projectConfigurable groupId="Other Settings" displayName="Fish-Book Config" id="fish.id"
+                             instance="fun.bugfix.fish.idea.Setting"/>
+        <applicationService serviceImplementation="fun.bugfix.fish.idea.PersistentState"/>
+    </extensions>
+
+    <actions>
+        <!--Add your actions here -->
+        <action id="fish-book" class="fun.bugfix.fish.idea.ShowFishBook" text="Mo Fish"
+                description="Mo Fish">
+            <add-to-group group-id="WindowMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.5.0'
+}
+
+group 'fun.bugfix.fish'
+version '1.1'
+sourceCompatibility = 8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.2.3'
+}
+
+patchPluginXml {
+    changeNotes """
+      <b>v1.0</b> 创建项目 - 2020-10-16<br>
+      <b>v1.1</b> 兼容到 191 版本 - 2020-10-16<br>
+      """
+
+    // 这个意思是说当前定义的这个插件最早支持到什么版本的IDEA
+    // 这里配置sinceBuild=191，表示插件只能被版本号大于等于2019.1版本的IDEA安装，低于这个版本的将抛无法兼容的错误
+    // ↑上方参考这篇问答：https://intellij-support.jetbrains.com/hc/en-us/community/posts/360003338799-Build-compatible-plugin
+    sinceBuild "191"
+}
